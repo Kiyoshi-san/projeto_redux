@@ -10,6 +10,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { clickButton } from '../actions';
 
+import axios from "axios";
+
+import Planet from "./Planet";
+
 // function App() {
 class App extends Component {
     state = {
@@ -21,13 +25,23 @@ class App extends Component {
         })
     }
 
+    getPlanet() {
+        let idPlanet = Math.floor(Math.random() * 61) + 1;
+        axios
+        .post(`https://swapi.co/api/planets/${idPlanet}`)
+        .then(res =>  console.log(res))
+        .catch(res => console.log("Ocorreu um erro, tente novamente mais tarde: " + res));
+    }
+
     render() {
         // const { newValue } = this.props;
         const {
-            clickButton,
-            newValue
+            clickButtonProps,
+            newValueProps
         } = this.props;
         const { inputValue } = this.state;
+        
+        this.getPlanet();
         
         return (
             <div className="App">
@@ -56,11 +70,12 @@ class App extends Component {
                     type='text'
                     value={inputValue}
                 />
-                <button onClick={() => clickButton(inputValue)}>
+                <button onClick={() => clickButtonProps(inputValue)}>
                     Click me!
-        </button>
+                </button>
 
-                <h1>{newValue}</h1>
+                <h1>{newValueProps}</h1>
+                <Planet />
 
             </div>
         );
@@ -69,11 +84,14 @@ class App extends Component {
 
 // export default App;
 const mapStateToProps = store => ({
-    newValue: store.clickState.newValue
+    newValueProps: store.clickState.newValue
 })
 
 // INSERIDO 2
-const mapDispatchToProps = dispatch => bindActionCreators({ clickButton }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ 
+    // clickButton
+    clickButtonProps: clickButton
+}, dispatch);
 
 // export default connect(mapStateToProps)(App);
 // INSERIDO 2
