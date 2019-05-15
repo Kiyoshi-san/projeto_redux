@@ -72,7 +72,7 @@ class App extends Component {
                     Click me!
                 </button> */}
 
-                <input
+                {/* <input
                     onChange={this.inputChange}
                     type='text'
                     value={inputValue}
@@ -81,8 +81,11 @@ class App extends Component {
                     Click me!
                 </button>
 
-                <h1>{novoValorInputProps}</h1>
-                <Planet />
+                <h1>{novoValorInputProps}</h1> */}
+
+                <Planet
+                    planetProps = {this.props.novoValorPlanetaProps}
+                />
 
             </div>
         );
