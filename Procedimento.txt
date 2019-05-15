@@ -6,6 +6,20 @@ senha: Deusefiel1*
 
 --
 
+###################
+WORKSPACE
+###################
+
+F:\kiu\Projetos\ReactJS\projeto_redux\src\index.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\actions\actionTypes.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\actions\index.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\pages\index.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\reducers\clickReducer.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\reducers\index.js
+F:\kiu\Projetos\ReactJS\projeto_redux\src\store\index.js
+
+--
+
 PROCEDIMENTOS
 
 NA PASTA DO PROJETO (b2w)
