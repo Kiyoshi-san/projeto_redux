@@ -1,16 +1,16 @@
-import { CLICK_UPDATE_VALUE } from "../actions/actionTypes";
+import { ACTIONS } from "../actions/actionTypes";
 
 const initialState = {
-    newValue: ""
-    // newValue: "ATUALIZADO VIA REDUCER"
+    novoValorInput: ""
+    // novoValorInput: "ATUALIZADO VIA REDUCER"
 }
 
 export const clickReducer = (state = initialState, action) => {
     switch (action.type) {
-        case CLICK_UPDATE_VALUE:
+        case ACTIONS.CLICK_UPDATE_VALUE:
             return {
                 ...state,
-                newValue: action.newValue
+                novoValorInput: action.novoValorInput
             };
         default:
             return state;
